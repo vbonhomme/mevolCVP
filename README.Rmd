@@ -1,10 +1,11 @@
 ---
 output: github_document
 ---
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build status](https://travis-ci.org/vbonhomme/2018-mevolCVP.svg?branch=master)](https://travis-ci.org/vbonhomme/2018-mevolCVP)
-[![CRAN status](https://www.r-pkg.org/badges/version/mevolCVP)](https://cran.r-project.org/package=mevolCVP)
 
+[![Travis build status](https://travis-ci.org/vbonhomme/mevolCVP.svg?branch=master)](https://travis-ci.org/vbonhomme/mevolCVP)
+<!--
+[![CRAN status](https://www.r-pkg.org/badges/version/mevolCVP)](https://cran.r-project.org/package=mevolCVP)
+-->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r setup, include = FALSE}
@@ -21,32 +22,26 @@ The goal of mevolCVP is to ...
 
 ## Installation
 
-You can install the released version of mevolCVP from [CRAN](https://CRAN.R-project.org) with:
+You will be able to install the (once) released version of mevolCVP from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("mevolCVP")
 ```
+
+so far you can:
+
+```{r}
+devtools::install_github("vbonhomme/mevolCVP")
+```
+
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## basic example code
+library(mevolCVP)
+mevol_CVP(pig$mat, pig$gp, nrep=2)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+More to come.

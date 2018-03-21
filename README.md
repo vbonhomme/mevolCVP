@@ -1,7 +1,8 @@
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) [![Travis build status](https://travis-ci.org/vbonhomme/2018-mevolCVP.svg?branch=master)](https://travis-ci.org/vbonhomme/2018-mevolCVP) [![CRAN status](https://www.r-pkg.org/badges/version/mevolCVP)](https://cran.r-project.org/package=mevolCVP)
+[![Travis build status](https://travis-ci.org/vbonhomme/mevolCVP.svg?branch=master)](https://travis-ci.org/vbonhomme/mevolCVP) <!--
+[![CRAN status](https://www.r-pkg.org/badges/version/mevolCVP)](https://cran.r-project.org/package=mevolCVP)
+--> <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 mevolCVP
 ========
 
@@ -10,10 +11,24 @@ The goal of mevolCVP is to ...
 Installation
 ------------
 
-You can install the released version of mevolCVP from [CRAN](https://CRAN.R-project.org) with:
+You will be able to install the (once) released version of mevolCVP from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("mevolCVP")
+```
+
+so far you can:
+
+``` r
+devtools::install_github("vbonhomme/mevolCVP")
+#> Downloading GitHub repo vbonhomme/mevolCVP@master
+#> from URL https://api.github.com/repos/vbonhomme/mevolCVP/zipball/master
+#> Installing mevolCVP
+#> '/Library/Frameworks/R.framework/Resources/bin/R' --no-site-file  \
+#>   --no-environ --no-save --no-restore --quiet CMD INSTALL  \
+#>   '/private/var/folders/71/xqm_5j310_j1jg6mfb5xlr_w0000gn/T/RtmpSLFdXj/devtools96c43f50b9a3/vbonhomme-mevolCVP-ef4a403'  \
+#>   --library='/Users/vincent/Library/R/3.4/library' --install-tests
+#> 
 ```
 
 Example
@@ -22,26 +37,161 @@ Example
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-## basic example code
+library(mevolCVP)
+mevol_CVP(pig$mat, pig$gp, nrep=2)
+#> [1] "The analyses are done with 2 groups"
+#> group
+#>  DP  WB 
+#>  42 129
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+<img src="man/figures/README-example-1.png" width="100%" />
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+    #> $CVoriginal
+    #>  [1] 80.70175 81.28655 81.87135 86.54971 86.54971 88.30409 90.64327
+    #>  [8] 90.05848 88.88889 90.05848 90.64327 92.39766 91.81287 91.81287
+    #> [15] 91.22807 91.22807 91.22807 91.22807 91.22807 91.81287 91.81287
+    #> [22] 91.22807 91.22807 91.22807 91.22807 90.64327 90.64327 90.05848
+    #> [29] 90.05848
+    #> 
+    #> $CVbalanced
+    #>          2PCs     3PCs     4PCs     5PCs     6PCs    7PCs     8PCs
+    #> [1,] 75.00000 72.61905 75.00000 76.19048 73.80952 79.7619 80.95238
+    #> [2,] 76.19048 75.00000 82.14286 78.57143 77.38095 79.7619 83.33333
+    #>          9PCs    10PCs    11PCs    12PCs    13PCs    14PCs    15PCs
+    #> [1,] 82.14286 84.52381 82.14286 84.52381 84.52381 85.71429 82.14286
+    #> [2,] 83.33333 84.52381 86.90476 88.09524 88.09524 86.90476 84.52381
+    #>         16PCs    17PCs    18PCs    19PCs    20PCs    21PCs    22PCs
+    #> [1,] 79.76190 83.33333 82.14286 83.33333 84.52381 83.33333 83.33333
+    #> [2,] 84.52381 86.90476 84.52381 83.33333 84.52381 84.52381 84.52381
+    #>         23PCs    24PCs    25PCs    26PCs    27PCs    28PCs    29PCs
+    #> [1,] 83.33333 83.33333 83.33333 82.14286 80.95238 80.95238 83.33333
+    #> [2,] 84.52381 85.71429 84.52381 84.52381 82.14286 80.95238 80.95238
+    #>         30PCs
+    #> [1,] 82.14286
+    #> [2,] 82.14286
+    #> 
+    #> $CVrandom
+    #>         2PCs     3PCs     4PCs     5PCs    6PCs    7PCs     8PCs     9PCs
+    #> [1,] 75.4386 76.02339 76.02339 76.02339 75.4386 75.4386 76.02339 73.09942
+    #> [2,] 75.4386 75.43860 75.43860 75.43860 75.4386 75.4386 76.02339 73.68421
+    #>         10PCs    11PCs    12PCs    13PCs    14PCs    15PCs    16PCs
+    #> [1,] 72.51462 70.76023 69.00585 69.59064 69.59064 68.42105 69.00585
+    #> [2,] 74.26901 74.26901 73.68421 73.09942 72.51462 72.51462 71.92982
+    #>         17PCs    18PCs    19PCs    20PCs    21PCs    22PCs    23PCs
+    #> [1,] 68.42105 70.17544 70.76023 70.17544 70.17544 69.59064 69.59064
+    #> [2,] 71.34503 71.34503 70.76023 69.00585 68.42105 69.00585 69.59064
+    #>         24PCs    25PCs    26PCs    27PCs    28PCs    29PCs    30PCs
+    #> [1,] 67.83626 67.25146 67.25146 67.25146 66.08187 69.59064 69.59064
+    #> [2,] 68.42105 68.42105 67.25146 66.08187 66.66667 66.08187 64.91228
+    #> 
+    #> $CVbalancedrandom
+    #>          2PCs     3PCs     4PCs     5PCs     6PCs     7PCs     8PCs
+    #> [1,] 52.38095 50.00000 55.95238 54.76190 53.57143 52.38095 54.76190
+    #> [2,] 60.71429 61.90476 59.52381 64.28571 61.90476 59.52381 58.33333
+    #>          9PCs    10PCs    11PCs    12PCs    13PCs    14PCs    15PCs
+    #> [1,] 55.95238 52.38095 53.57143 59.52381 59.52381 57.14286 50.00000
+    #> [2,] 60.71429 52.38095 57.14286 57.14286 50.00000 51.19048 51.19048
+    #>         16PCs    17PCs    18PCs    19PCs   20PCs    21PCs    22PCs
+    #> [1,] 48.80952 55.95238 55.95238 55.95238 54.7619 51.19048 50.00000
+    #> [2,] 50.00000 48.80952 48.80952 50.00000 50.0000 50.00000 48.80952
+    #>         23PCs    24PCs    25PCs    26PCs    27PCs    28PCs    29PCs
+    #> [1,] 51.19048 51.19048 46.42857 47.61905 45.23810 47.61905 50.00000
+    #> [2,] 48.80952 47.61905 46.42857 48.80952 42.85714 42.85714 42.85714
+    #>         30PCs
+    #> [1,] 48.80952
+    #> [2,] 46.42857
+    #> 
+    #> $CVsummary
+    #>       mean-CVbalanced CI5%-CVbalanced CI95%-CVbalanced mean-CVrandom
+    #> 2PCs         75.59524        75.05952         76.13095      75.43860
+    #> 3PCs         73.80952        72.73810         74.88095      75.73099
+    #> 4PCs         78.57143        75.35714         81.78571      75.73099
+    #> 5PCs         77.38095        76.30952         78.45238      75.73099
+    #> 6PCs         75.59524        73.98810         77.20238      75.43860
+    #> 7PCs         79.76190        79.76190         79.76190      75.43860
+    #> 8PCs         82.14286        81.07143         83.21429      76.02339
+    #> 9PCs         82.73810        82.20238         83.27381      73.39181
+    #> 10PCs        84.52381        84.52381         84.52381      73.39181
+    #> 11PCs        84.52381        82.38095         86.66667      72.51462
+    #> 12PCs        86.30952        84.70238         87.91667      71.34503
+    #> 13PCs        86.30952        84.70238         87.91667      71.34503
+    #> 14PCs        86.30952        85.77381         86.84524      71.05263
+    #> 15PCs        83.33333        82.26190         84.40476      70.46784
+    #> 16PCs        82.14286        80.00000         84.28571      70.46784
+    #> 17PCs        85.11905        83.51190         86.72619      69.88304
+    #> 18PCs        83.33333        82.26190         84.40476      70.76023
+    #> 19PCs        83.33333        83.33333         83.33333      70.76023
+    #> 20PCs        84.52381        84.52381         84.52381      69.59064
+    #> 21PCs        83.92857        83.39286         84.46429      69.29825
+    #> 22PCs        83.92857        83.39286         84.46429      69.29825
+    #> 23PCs        83.92857        83.39286         84.46429      69.59064
+    #> 24PCs        84.52381        83.45238         85.59524      68.12865
+    #> 25PCs        83.92857        83.39286         84.46429      67.83626
+    #> 26PCs        83.33333        82.26190         84.40476      67.25146
+    #> 27PCs        81.54762        81.01190         82.08333      66.66667
+    #> 28PCs        80.95238        80.95238         80.95238      66.37427
+    #> 29PCs        82.14286        81.07143         83.21429      67.83626
+    #> 30PCs        82.14286        82.14286         82.14286      67.25146
+    #>       CI5%-CVrandom CI95%-CVrandom mean-CVbalancedrandom
+    #> 2PCs       75.43860       75.43860              56.54762
+    #> 3PCs       75.46784       75.99415              55.95238
+    #> 4PCs       75.46784       75.99415              57.73810
+    #> 5PCs       75.46784       75.99415              59.52381
+    #> 6PCs       75.43860       75.43860              57.73810
+    #> 7PCs       75.43860       75.43860              55.95238
+    #> 8PCs       76.02339       76.02339              56.54762
+    #> 9PCs       73.12865       73.65497              58.33333
+    #> 10PCs      72.60234       74.18129              52.38095
+    #> 11PCs      70.93567       74.09357              55.35714
+    #> 12PCs      69.23977       73.45029              58.33333
+    #> 13PCs      69.76608       72.92398              54.76190
+    #> 14PCs      69.73684       72.36842              54.16667
+    #> 15PCs      68.62573       72.30994              50.59524
+    #> 16PCs      69.15205       71.78363              49.40476
+    #> 17PCs      68.56725       71.19883              52.38095
+    #> 18PCs      70.23392       71.28655              52.38095
+    #> 19PCs      70.76023       70.76023              52.97619
+    #> 20PCs      69.06433       70.11696              52.38095
+    #> 21PCs      68.50877       70.08772              50.59524
+    #> 22PCs      69.03509       69.56140              49.40476
+    #> 23PCs      69.59064       69.59064              50.00000
+    #> 24PCs      67.86550       68.39181              49.40476
+    #> 25PCs      67.30994       68.36257              46.42857
+    #> 26PCs      67.25146       67.25146              48.21429
+    #> 27PCs      66.14035       67.19298              44.04762
+    #> 28PCs      66.11111       66.63743              45.23810
+    #> 29PCs      66.25731       69.41520              46.42857
+    #> 30PCs      65.14620       69.35673              47.61905
+    #>       CI5%-CVbalancedrandom CI95%-CVbalancedrandom
+    #> 2PCs               52.79762               60.29762
+    #> 3PCs               50.59524               61.30952
+    #> 4PCs               56.13095               59.34524
+    #> 5PCs               55.23810               63.80952
+    #> 6PCs               53.98810               61.48810
+    #> 7PCs               52.73810               59.16667
+    #> 8PCs               54.94048               58.15476
+    #> 9PCs               56.19048               60.47619
+    #> 10PCs              52.38095               52.38095
+    #> 11PCs              53.75000               56.96429
+    #> 12PCs              57.26190               59.40476
+    #> 13PCs              50.47619               59.04762
+    #> 14PCs              51.48810               56.84524
+    #> 15PCs              50.05952               51.13095
+    #> 16PCs              48.86905               49.94048
+    #> 17PCs              49.16667               55.59524
+    #> 18PCs              49.16667               55.59524
+    #> 19PCs              50.29762               55.65476
+    #> 20PCs              50.23810               54.52381
+    #> 21PCs              50.05952               51.13095
+    #> 22PCs              48.86905               49.94048
+    #> 23PCs              48.92857               51.07143
+    #> 24PCs              47.79762               51.01190
+    #> 25PCs              46.42857               46.42857
+    #> 26PCs              47.67857               48.75000
+    #> 27PCs              42.97619               45.11905
+    #> 28PCs              43.09524               47.38095
+    #> 29PCs              43.21429               49.64286
+    #> 30PCs              46.54762               48.69048
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+More to come.
