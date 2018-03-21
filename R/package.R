@@ -2,7 +2,7 @@
 "_PACKAGE"
 
 #' @importFrom grDevices rgb
-#' @importFrom importFrom graphics abline axis box legend lines par plot points polygon title
+#' @importFrom graphics abline axis box legend lines par plot points polygon title
 #' @importFrom stats prcomp predict quantile
 
 #' Data from JAS
