@@ -1,7 +1,7 @@
 Package: mevolCVP
-Version: 0.0.0.9000
-Title: What the Package Does (One Line, Title Case)
-Description: What the package does (one paragraph).
+Version: 0.1.0
+Title: Bla blah
+Description: More blah blah
 Authors@R: c(
     person("Allowen", "Evin", email = "allowen.evin@umontpellier.fr", role = c("aut", "cre")),
     person("Vincent", "Bonhomme", email = "vincent.bonhomme@umontpellier.fr", role = "aut"))
@@ -11,3 +11,4 @@ LazyData: true
 ByteCompile: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
+Imports: MASS
