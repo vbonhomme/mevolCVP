@@ -58,7 +58,6 @@
     
 <div class="contents">
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="mevolcvp" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#mevolcvp" class="anchor"></a>mevolCVP</h1></div>
@@ -66,27 +65,177 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of mevolCVP from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<p>You will be able to install the (once) released version of mevolCVP from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"mevolCVP"</span>)</code></pre></div>
+<p>so far you can:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"vbonhomme/mevolCVP"</span>)
+<span class="co">#&gt; Downloading GitHub repo vbonhomme/mevolCVP@master</span>
+<span class="co">#&gt; from URL https://api.github.com/repos/vbonhomme/mevolCVP/zipball/master</span>
+<span class="co">#&gt; Installing mevolCVP</span>
+<span class="co">#&gt; '/Library/Frameworks/R.framework/Resources/bin/R' --no-site-file  \</span>
+<span class="co">#&gt;   --no-environ --no-save --no-restore --quiet CMD INSTALL  \</span>
+<span class="co">#&gt;   '/private/var/folders/71/xqm_5j310_j1jg6mfb5xlr_w0000gn/T/RtmpWBcEuS/devtools97a76775609b/vbonhomme-mevolCVP-36f8599'  \</span>
+<span class="co">#&gt;   --library='/Users/vincent/Library/R/3.4/library' --install-tests</span>
+<span class="co">#&gt; </span></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic example which shows you how to solve a common problem:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## basic example code</code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)
-<span class="co">#&gt;      speed           dist       </span>
-<span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span>
-<span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span>
-<span class="co">#&gt;  Median :15.0   Median : 36.00  </span>
-<span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span>
-<span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span>
-<span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date.</p>
-<p>You can also embed plots, for example:</p>
-<p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mevolCVP)
+<span class="kw"><a href="reference/mevol_CVP.html">mevol_CVP</a></span>(pig<span class="op">$</span>mat, pig<span class="op">$</span>gp, <span class="dt">nrep=</span><span class="dv">2</span>)
+<span class="co">#&gt; [1] "The analyses are done with 2 groups"</span>
+<span class="co">#&gt; group</span>
+<span class="co">#&gt;  DP  WB </span>
+<span class="co">#&gt;  42 129</span></code></pre></div>
+<p><img src="reference/figures/README-example-1.png" width="100%"></p>
+<pre><code>#&gt; $CVoriginal
+#&gt;  [1] 80.70175 81.28655 81.87135 86.54971 86.54971 88.30409 90.64327
+#&gt;  [8] 90.05848 88.88889 90.05848 90.64327 92.39766 91.81287 91.81287
+#&gt; [15] 91.22807 91.22807 91.22807 91.22807 91.22807 91.81287 91.81287
+#&gt; [22] 91.22807 91.22807 91.22807 91.22807 90.64327 90.64327 90.05848
+#&gt; [29] 90.05848
+#&gt; 
+#&gt; $CVbalanced
+#&gt;          2PCs     3PCs     4PCs     5PCs     6PCs     7PCs     8PCs
+#&gt; [1,] 77.38095 76.19048 77.38095 76.19048 84.52381 83.33333 82.14286
+#&gt; [2,] 79.76190 78.57143 83.33333 82.14286 78.57143 83.33333 83.33333
+#&gt;          9PCs    10PCs    11PCs    12PCs    13PCs    14PCs    15PCs
+#&gt; [1,] 84.52381 86.90476 86.90476 88.09524 88.09524 88.09524 89.28571
+#&gt; [2,] 84.52381 80.95238 84.52381 84.52381 88.09524 88.09524 86.90476
+#&gt;         16PCs    17PCs    18PCs    19PCs    20PCs    21PCs    22PCs
+#&gt; [1,] 88.09524 85.71429 85.71429 85.71429 83.33333 82.14286 85.71429
+#&gt; [2,] 86.90476 89.28571 90.47619 89.28571 88.09524 85.71429 85.71429
+#&gt;         23PCs    24PCs    25PCs    26PCs    27PCs    28PCs    29PCs
+#&gt; [1,] 82.14286 83.33333 83.33333 80.95238 83.33333 82.14286 84.52381
+#&gt; [2,] 85.71429 85.71429 88.09524 88.09524 85.71429 85.71429 85.71429
+#&gt;         30PCs
+#&gt; [1,] 84.52381
+#&gt; [2,] 85.71429
+#&gt; 
+#&gt; $CVrandom
+#&gt;         2PCs    3PCs    4PCs    5PCs    6PCs    7PCs     8PCs     9PCs
+#&gt; [1,] 74.8538 74.8538 74.8538 74.8538 74.8538 74.8538 74.85380 74.26901
+#&gt; [2,] 75.4386 75.4386 75.4386 75.4386 74.8538 74.8538 74.26901 73.68421
+#&gt;         10PCs    11PCs    12PCs    13PCs    14PCs    15PCs    16PCs
+#&gt; [1,] 73.68421 73.09942 74.85380 73.09942 71.92982 73.68421 73.68421
+#&gt; [2,] 74.26901 74.26901 73.68421 73.68421 73.09942 73.09942 73.68421
+#&gt;         17PCs    18PCs    19PCs    20PCs    21PCs    22PCs    23PCs
+#&gt; [1,] 71.34503 71.34503 71.34503 69.59064 69.59064 69.59064 68.42105
+#&gt; [2,] 73.09942 73.09942 73.09942 72.51462 72.51462 70.17544 70.17544
+#&gt;         24PCs    25PCs    26PCs    27PCs    28PCs    29PCs    30PCs
+#&gt; [1,] 69.00585 71.34503 72.51462 70.17544 69.00585 69.00585 71.92982
+#&gt; [2,] 69.59064 69.00585 68.42105 67.83626 66.66667 66.08187 67.25146
+#&gt; 
+#&gt; $CVbalancedrandom
+#&gt;          2PCs    3PCs     4PCs     5PCs     6PCs     7PCs     8PCs
+#&gt; [1,] 48.80952 45.2381 39.28571 48.80952 52.38095 41.66667 53.57143
+#&gt; [2,] 54.76190 54.7619 52.38095 57.14286 48.80952 55.95238 53.57143
+#&gt;          9PCs    10PCs    11PCs    12PCs    13PCs    14PCs    15PCs
+#&gt; [1,] 59.52381 57.14286 55.95238 69.04762 66.66667 64.28571 64.28571
+#&gt; [2,] 53.57143 52.38095 50.00000 48.80952 48.80952 47.61905 42.85714
+#&gt;         16PCs    17PCs    18PCs    19PCs    20PCs    21PCs    22PCs
+#&gt; [1,] 61.90476 59.52381 59.52381 57.14286 55.95238 55.95238 53.57143
+#&gt; [2,] 41.66667 46.42857 45.23810 42.85714 42.85714 45.23810 44.04762
+#&gt;         23PCs    24PCs    25PCs    26PCs    27PCs    28PCs    29PCs
+#&gt; [1,] 55.95238 55.95238 55.95238 54.76190 54.76190 52.38095 51.19048
+#&gt; [2,] 42.85714 40.47619 35.71429 41.66667 36.90476 45.23810 42.85714
+#&gt;         30PCs
+#&gt; [1,] 51.19048
+#&gt; [2,] 39.28571
+#&gt; 
+#&gt; $CVsummary
+#&gt;       mean-CVbalanced CI5%-CVbalanced CI95%-CVbalanced mean-CVrandom
+#&gt; 2PCs         78.57143        77.50000         79.64286      75.14620
+#&gt; 3PCs         77.38095        76.30952         78.45238      75.14620
+#&gt; 4PCs         80.35714        77.67857         83.03571      75.14620
+#&gt; 5PCs         79.16667        76.48810         81.84524      75.14620
+#&gt; 6PCs         81.54762        78.86905         84.22619      74.85380
+#&gt; 7PCs         83.33333        83.33333         83.33333      74.85380
+#&gt; 8PCs         82.73810        82.20238         83.27381      74.56140
+#&gt; 9PCs         84.52381        84.52381         84.52381      73.97661
+#&gt; 10PCs        83.92857        81.25000         86.60714      73.97661
+#&gt; 11PCs        85.71429        84.64286         86.78571      73.68421
+#&gt; 12PCs        86.30952        84.70238         87.91667      74.26901
+#&gt; 13PCs        88.09524        88.09524         88.09524      73.39181
+#&gt; 14PCs        88.09524        88.09524         88.09524      72.51462
+#&gt; 15PCs        88.09524        87.02381         89.16667      73.39181
+#&gt; 16PCs        87.50000        86.96429         88.03571      73.68421
+#&gt; 17PCs        87.50000        85.89286         89.10714      72.22222
+#&gt; 18PCs        88.09524        85.95238         90.23810      72.22222
+#&gt; 19PCs        87.50000        85.89286         89.10714      72.22222
+#&gt; 20PCs        85.71429        83.57143         87.85714      71.05263
+#&gt; 21PCs        83.92857        82.32143         85.53571      71.05263
+#&gt; 22PCs        85.71429        85.71429         85.71429      69.88304
+#&gt; 23PCs        83.92857        82.32143         85.53571      69.29825
+#&gt; 24PCs        84.52381        83.45238         85.59524      69.29825
+#&gt; 25PCs        85.71429        83.57143         87.85714      70.17544
+#&gt; 26PCs        84.52381        81.30952         87.73810      70.46784
+#&gt; 27PCs        84.52381        83.45238         85.59524      69.00585
+#&gt; 28PCs        83.92857        82.32143         85.53571      67.83626
+#&gt; 29PCs        85.11905        84.58333         85.65476      67.54386
+#&gt; 30PCs        85.11905        84.58333         85.65476      69.59064
+#&gt;       CI5%-CVrandom CI95%-CVrandom mean-CVbalancedrandom
+#&gt; 2PCs       74.88304       75.40936              51.78571
+#&gt; 3PCs       74.88304       75.40936              50.00000
+#&gt; 4PCs       74.88304       75.40936              45.83333
+#&gt; 5PCs       74.88304       75.40936              52.97619
+#&gt; 6PCs       74.85380       74.85380              50.59524
+#&gt; 7PCs       74.85380       74.85380              48.80952
+#&gt; 8PCs       74.29825       74.82456              53.57143
+#&gt; 9PCs       73.71345       74.23977              56.54762
+#&gt; 10PCs      73.71345       74.23977              54.76190
+#&gt; 11PCs      73.15789       74.21053              52.97619
+#&gt; 12PCs      73.74269       74.79532              58.92857
+#&gt; 13PCs      73.12865       73.65497              57.73810
+#&gt; 14PCs      71.98830       73.04094              55.95238
+#&gt; 15PCs      73.12865       73.65497              53.57143
+#&gt; 16PCs      73.68421       73.68421              51.78571
+#&gt; 17PCs      71.43275       73.01170              52.97619
+#&gt; 18PCs      71.43275       73.01170              52.38095
+#&gt; 19PCs      71.43275       73.01170              50.00000
+#&gt; 20PCs      69.73684       72.36842              49.40476
+#&gt; 21PCs      69.73684       72.36842              50.59524
+#&gt; 22PCs      69.61988       70.14620              48.80952
+#&gt; 23PCs      68.50877       70.08772              49.40476
+#&gt; 24PCs      69.03509       69.56140              48.21429
+#&gt; 25PCs      69.12281       71.22807              45.83333
+#&gt; 26PCs      68.62573       72.30994              48.21429
+#&gt; 27PCs      67.95322       70.05848              45.83333
+#&gt; 28PCs      66.78363       68.88889              48.80952
+#&gt; 29PCs      66.22807       68.85965              47.02381
+#&gt; 30PCs      67.48538       71.69591              45.23810
+#&gt;       CI5%-CVbalancedrandom CI95%-CVbalancedrandom
+#&gt; 2PCs               49.10714               54.46429
+#&gt; 3PCs               45.71429               54.28571
+#&gt; 4PCs               39.94048               51.72619
+#&gt; 5PCs               49.22619               56.72619
+#&gt; 6PCs               48.98810               52.20238
+#&gt; 7PCs               42.38095               55.23810
+#&gt; 8PCs               53.57143               53.57143
+#&gt; 9PCs               53.86905               59.22619
+#&gt; 10PCs              52.61905               56.90476
+#&gt; 11PCs              50.29762               55.65476
+#&gt; 12PCs              49.82143               68.03571
+#&gt; 13PCs              49.70238               65.77381
+#&gt; 14PCs              48.45238               63.45238
+#&gt; 15PCs              43.92857               63.21429
+#&gt; 16PCs              42.67857               60.89286
+#&gt; 17PCs              47.08333               58.86905
+#&gt; 18PCs              45.95238               58.80952
+#&gt; 19PCs              43.57143               56.42857
+#&gt; 20PCs              43.51190               55.29762
+#&gt; 21PCs              45.77381               55.41667
+#&gt; 22PCs              44.52381               53.09524
+#&gt; 23PCs              43.51190               55.29762
+#&gt; 24PCs              41.25000               55.17857
+#&gt; 25PCs              36.72619               54.94048
+#&gt; 26PCs              42.32143               54.10714
+#&gt; 27PCs              37.79762               53.86905
+#&gt; 28PCs              45.59524               52.02381
+#&gt; 29PCs              43.27381               50.77381
+#&gt; 30PCs              39.88095               50.59524</code></pre>
+<p>More to come.</p>
 </div>
 </div>
 </div>
@@ -107,9 +256,7 @@
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
-<li><a href="https://travis-ci.org/vbonhomme/2018-mevolCVP"><img src="https://travis-ci.org/vbonhomme/2018-mevolCVP.svg?branch=master" alt="Travis build status"></a></li>
-<li><a href="https://cran.r-project.org/package=mevolCVP"><img src="https://www.r-pkg.org/badges/version/mevolCVP" alt="CRAN status"></a></li>
+<li><a href="https://travis-ci.org/vbonhomme/mevolCVP"><img src="https://travis-ci.org/vbonhomme/mevolCVP.svg?branch=master" alt="Travis build status"></a></li>
 </ul>
 </div>
 
