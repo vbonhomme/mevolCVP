@@ -15,9 +15,10 @@
 #'
 #' @examples
 #' # Some examples
-#' mevolCVP(pig$mat, pig$gp, nrep=2)
+#' mevol_CVP(pig$mat, pig$gp, nrep=2)
+#'
 #' @export
-mevolCVP <- function(mat=mat, group=group,
+mevol_CVP <- function(mat=mat, group=group,
                      lim=30, nrep=100,
                      return.matrix=FALSE,
                      minInd= NULL, print.legend=TRUE) {

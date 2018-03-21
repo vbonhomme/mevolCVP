@@ -1,7 +1,7 @@
 Package: mevolCVP
 Version: 0.1.0
 Title: Bla blah
-Description: More blah blah
+Description: More blah blah. More blah blah.
 Authors@R: c(
     person("Allowen", "Evin", email = "allowen.evin@umontpellier.fr", role = c("aut", "cre")),
     person("Vincent", "Bonhomme", email = "vincent.bonhomme@umontpellier.fr", role = "aut"))

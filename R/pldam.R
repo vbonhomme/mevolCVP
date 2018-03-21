@@ -10,8 +10,7 @@
 #' @param nrep number of replicates
 #' @param return.matrix `logical` whether to return full results
 #' @param limproba a limit for the posterior probability to be concidered
-#' @param limCVP a limit for the cross validation % of the discriminate analysis to be concidered
-#' @param nrep number of replicates
+#' @param limCVP a limit for the cross validation percent of the discriminate analysis to be concidered
 #' @param minInd the number of specimens to include for the balanced design if smaller than the smallest of the "known" groups
 #'
 #' @return a `list`

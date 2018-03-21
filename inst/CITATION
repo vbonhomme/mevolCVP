@@ -5,7 +5,7 @@ citEntry(entry = "Article",
                    as.person("Andrea Cardini"),
                    as.person("Una Strand Vidarsdottir"),
                    as.person("Greger Larson"),
-                   as.person("Keith Dobneya")),
+                   as.person("Keith Dobney")),
   journal      = "Journal of Archaeological Science",
   year         = "2013",
   volume       = "40",
@@ -19,3 +19,4 @@ citEntry(entry = "Article",
         "The long and winding road: identifying pig domestication through molar size and shape.",
         "Journal of Archaeological Science, 40(1), 735-743.",
         "URL https://doi.org/10.1016/j.jas.2012.08.005")
+        )

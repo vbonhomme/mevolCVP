@@ -6,7 +6,7 @@
 \alias{mevolCVP-package}
 \title{mevolCVP: Bla blah}
 \description{
-More blah blah
+More blah blah. More blah blah.
 }
 \author{
 \strong{Maintainer}: Allowen Evin \email{allowen.evin@umontpellier.fr}
