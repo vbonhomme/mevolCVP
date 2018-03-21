@@ -12,3 +12,6 @@ ByteCompile: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
 Imports: MASS
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
