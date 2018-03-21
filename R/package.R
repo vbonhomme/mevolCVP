@@ -8,5 +8,5 @@
 #' @importFrom stats prcomp predict quantile
 #'
 #' @docType package
-#' @name mevolCVP
+#' @name mevolCVP_package
 NULL

@@ -1,12 +1,14 @@
 #' Predictive discriminant analyses based on balanced samples.
 #'
-#'
 #' More about it
 #'
 #' @param mat matrix with the 'known' data (usually PC scores, but works also with univariate data)
 #' @param group grouping factor of the 'known' data
 #' @param mattoid matrix with the data to be predicted
 #' @param codetoid label of the specimens to predict
+#' @param ncpts number of PCs to retain
+#' @param nrep number of replicates
+#' @param return.matrix `logical` whether to return full results
 #' @param limproba a limit for the posterior probability to be concidered
 #' @param limCVP a limit for the cross validation % of the discriminate analysis to be concidered
 #' @param nrep number of replicates
@@ -33,7 +35,6 @@ pldam <- function(mat=mat, group=group,
                   mattoid=mattoid, codetoid=codetoid,
                   ncpts=20, limproba=0, limCVP=FALSE,
                   nrep=100, return.matrix=TRUE, minInd= NULL) {
-  library(MASS)
   mat <- as.matrix(mat)
   mattoid <- as.matrix(mattoid)
   group <- as.factor(as.character(group))

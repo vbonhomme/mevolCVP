@@ -9,6 +9,7 @@
 #' @param nrep number of resampling.
 #' @param return.matrix if =TRUE, the matrix used to draw the graphics is returned.
 #' @param minInd the minimum number of specimens to be included in the analyses. By default the number of specimens in the smallest group.
+#' @param print.legend `logical` whether to add a legend
 #'
 #' @return a graph and if `return.matrix` is `TRUE`, then a `list`
 #'

@@ -14,7 +14,8 @@ citEntry(entry = "Article",
   url          = "https://doi.org/10.1016/j.jas.2012.08.005",
 
   textVersion  =
-  paste("Allowen Evin, Thomas Cucchi, Andrea Cardini, Una Strand Vidarsdottir, Greger Larson, Keith Dobney (2013).",
+  paste("Allowen Evin, Thomas Cucchi, Andrea Cardini,
+  Una Strand Vidarsdottir, Greger Larson, Keith Dobney (2013).",
         "The long and winding road: identifying pig domestication through molar size and shape.",
         "Journal of Archaeological Science, 40(1), 735-743.",
         "URL https://doi.org/10.1016/j.jas.2012.08.005")

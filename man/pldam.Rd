@@ -17,13 +17,19 @@ pldam(mat = mat, group = group, mattoid = mattoid, codetoid = codetoid,
 
 \item{codetoid}{label of the specimens to predict}
 
+\item{ncpts}{number of PCs to retain}
+
 \item{limproba}{a limit for the posterior probability to be concidered}
 
 \item{limCVP}{a limit for the cross validation % of the discriminate analysis to be concidered}
 
 \item{nrep}{number of replicates}
 
+\item{return.matrix}{\code{logical} whether to return full results}
+
 \item{minInd}{the number of specimens to include for the balanced design if smaller than the smallest of the "known" groups}
+
+\item{nrep}{number of replicates}
 }
 \value{
 a \code{list}
