@@ -21,17 +21,6 @@ so far you can (provinding `remotes` is installed):
 
 ``` r
 remotes::install_github("vbonhomme/mevolCVP")
-#> Using github PAT from envvar GITHUB_PAT
-#> Downloading GitHub repo vbonhomme/mevolCVP@HEAD
-#> * checking for file ‘/private/var/folders/02/qxs2_mmd301bj9dsvq6hgkj40000gp/T/RtmpYKsDM5/remotesaaac3d139fbc/vbonhomme-mevolCVP-ccd5a2e/DESCRIPTION’ ... OK
-#> * preparing ‘mevolCVP’:
-#> * checking DESCRIPTION meta-information ... OK
-#> * checking for LF line-endings in source and make files and shell scripts
-#> * checking for empty or unneeded directories
-#> * building ‘mevolCVP_0.1.1.tar.gz’
-#> Installing package into '/private/var/folders/02/qxs2_mmd301bj9dsvq6hgkj40000gp/T/Rtmp3L7fAu/temp_libpatha34a464244c9'
-#> (as 'lib' is unspecified)
-#> Adding 'mevolCVP_0.1.1.tgz' to the cache
 ```
 
 ## Example

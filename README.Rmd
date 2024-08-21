@@ -29,7 +29,7 @@ install.packages("mevolCVP")
 
 so far you can (provinding `remotes` is installed):
 
-```{r}
+```{r, eval=FALSE}
 remotes::install_github("vbonhomme/mevolCVP")
 ```
 
