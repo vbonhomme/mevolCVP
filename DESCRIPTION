@@ -1,5 +1,5 @@
 Package: mevolCVP
-Version: 0.1.0
+Version: 0.1.1
 Title: Bla blah
 Description: More blah blah. More blah blah.
 Authors@R: c(
@@ -10,7 +10,7 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.3.1
 Imports: MASS
 Suggests: knitr,
     rmarkdown

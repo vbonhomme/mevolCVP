@@ -34,9 +34,7 @@ mevol_CVP <- function(mat=mat, group=group,
   print(a)
 
   CVoriginal <- vector(length = lim)
-  CVbalanced <- matrix(, nrow = nrep, ncol = lim)
-  CVrandom <- matrix(, nrow = nrep, ncol = lim)
-  CVbalancedrandom <- matrix(, nrow = nrep, ncol = lim)
+  CVbalancedrandom <- CVrandom <- CVbalanced <- matrix(nrow = nrep, ncol = lim)
 
   if (ncol(mat) != 1) {
     for (nbc in 2:lim) {
@@ -126,7 +124,8 @@ mevol_CVP <- function(mat=mat, group=group,
       CVrandoms[i, ] <- c(mean(CVrandom[, i]), quantile(CVrandom[, i], c(0.05, 0.95))[1:2])
       CVbalancedrandoms[i, ] <- c(mean(CVbalancedrandom[, i]), quantile(CVbalancedrandom[, i], c(0.05, 0.95))[1:2])
     }
-    plot(x = c(2:lim), y = CVoriginal, type = "l", lwd = 2, col = "white", tck = 0, ylim = range(0:100), axes = FALSE, xlab = "Number of components", ylab = "%", xlim = range(2, lim))
+    plot(x = c(2:lim), y = CVoriginal, type = "l", lwd = 2, col = "white", tck = 0, ylim = range(0:100), axes = FALSE,
+         xlab = "Number of components", ylab = "% CV accuracy", xlim = range(2, lim))
     title(main = paste("mevolCVP computed with ", nrep, " resampling, ", "\n", ngroup, " groups of ", minInd, " ind. min", sep = ""))
     axis(1, at = c(2:lim))
     axis(2, at = c(0, 20, 40, 60, 80, 100))
@@ -175,6 +174,15 @@ mevol_CVP <- function(mat=mat, group=group,
     names(CVoriginal) <- paste(1:length(CVoriginal) + 1, "PCs", sep = "")
   }
   colnames(CVbalanced) <- colnames(CVbalancedrandom) <- colnames(CVrandom) <- paste(1:ncol(CVbalanced) + 1, "PCs", sep = "")
+
+  # patch for single variable case
+  if (ncol(mat) == 1){
+    CVbalanceds <- t(as.matrix(CVbalanceds))
+    CVrandoms <- t(as.matrix(CVrandoms))
+    CVbalancedrandoms <- t(as.matrix(CVbalancedrandoms))
+  }
+  # end of patch
+
   CVsummary <- cbind(CVbalanceds, CVrandoms, CVbalancedrandoms)
   colnames(CVsummary) <- paste(rep(c("mean-", "CI5%-", "CI95%-"), 3), rep(c("CVbalanced", "CVrandom", "CVbalancedrandom"), each = 3), sep = "")
   rownames(CVsummary) <- paste(1:nrow(CVsummary) + 1, "PCs", sep = "")

@@ -4,9 +4,18 @@
 \alias{pldam}
 \title{Predictive discriminant analyses based on balanced samples.}
 \usage{
-pldam(mat = mat, group = group, mattoid = mattoid, codetoid = codetoid,
-  ncpts = 20, limproba = 0, limCVP = FALSE, nrep = 100,
-  return.matrix = TRUE, minInd = NULL)
+pldam(
+  mat = mat,
+  group = group,
+  mattoid = mattoid,
+  codetoid = codetoid,
+  ncpts = 20,
+  limproba = 0,
+  limCVP = FALSE,
+  nrep = 100,
+  return.matrix = TRUE,
+  minInd = NULL
+)
 }
 \arguments{
 \item{mat}{matrix with the 'known' data (usually PC scores, but works also with univariate data)}

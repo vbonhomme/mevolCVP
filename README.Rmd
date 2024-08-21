@@ -2,7 +2,6 @@
 output: github_document
 ---
 
-[![Travis build status](https://travis-ci.org/vbonhomme/mevolCVP.svg?branch=master)](https://travis-ci.org/vbonhomme/mevolCVP)
 <!--
 [![CRAN status](https://www.r-pkg.org/badges/version/mevolCVP)](https://cran.r-project.org/package=mevolCVP)
 -->
@@ -28,10 +27,10 @@ You will be able to install the (once) released version of mevolCVP from [CRAN](
 install.packages("mevolCVP")
 ```
 
-so far you can:
+so far you can (provinding `remotes` is installed):
 
 ```{r}
-devtools::install_github("vbonhomme/mevolCVP")
+remotes::install_github("vbonhomme/mevolCVP")
 ```
 
 
@@ -43,5 +42,11 @@ This is a basic example which shows you how to solve a common problem:
 library(mevolCVP)
 mevol_CVP(pig$mat, pig$gp, nrep=2)
 ```
+
+You can also work on a single column:
+```{r}
+mevol_CVP(pig$mat[, 1], pig$gp, nrep=2)
+```
+
 
 More to come.

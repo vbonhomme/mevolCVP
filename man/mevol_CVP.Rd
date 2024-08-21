@@ -4,8 +4,15 @@
 \alias{mevol_CVP}
 \title{Do mevolCVP}
 \usage{
-mevol_CVP(mat = mat, group = group, lim = 30, nrep = 100,
-  return.matrix = FALSE, minInd = NULL, print.legend = TRUE)
+mevol_CVP(
+  mat = mat,
+  group = group,
+  lim = 30,
+  nrep = 100,
+  return.matrix = FALSE,
+  minInd = NULL,
+  print.legend = TRUE
+)
 }
 \arguments{
 \item{mat}{A PCA matrix (individuals in rows and variables in columns).}

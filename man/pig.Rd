@@ -4,7 +4,9 @@
 \name{pig}
 \alias{pig}
 \title{Data from JAS}
-\format{A \code{list} containing \code{gp} (a factor) and \code{mat} (a \code{matrix} of dim 171x171).}
+\format{
+A \code{list} containing \code{gp} (a factor) and \code{mat} (a \code{matrix} of dim 171x171).
+}
 \source{
 See citation("mevolCVP")
 }
