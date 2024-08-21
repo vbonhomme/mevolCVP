@@ -39,8 +39,9 @@ remotes::install_github("vbonhomme/mevolCVP")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(mevolCVP)
-mevol_CVP(pig$mat, pig$gp, nrep=2)
+library(mevolCVP)       # load the package
+set.seed(2329)          # for the sake of replicability
+mevol_CVP(pig$mat, pig$gp, nrep=2) # run mevolCVP with 2 iterations (speed purpose)
 ```
 
 You can also work on a single column:
